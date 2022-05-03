@@ -1,15 +1,18 @@
-"""Component 1 (User Age) -- Version 1
-Asking for users age
-Not allowing the program to continue if user
-older than 12 or younger than 5
-Although, code does crash when a string or float is entered
-<name> will be replaced with users name later in the code
+"""Component 1 (User Age) -- Version 2
+Use try/accept and pull error message out of the loop
 Written by Katelyn Gee
 Created on 3/05/2022
 """
+# Variables
+ERROR = "Please enter a whole number \n"
+valid = False
 
-# Ask users age
-age = int(input("What of your age, <name>? "))
+# Keep asking until a valid number is entered
+while not valid:
+    try:
+
+    # Ask users age
+    age = int(input("What of your age, <name>? "))
 
 # Checking if age between 5-12
 if age < 5:
