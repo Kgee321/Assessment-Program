@@ -9,17 +9,17 @@ Created on 3/05/2022
 """
 
 # Ask users age
-age = int(input("What of your age, <name>? "))
+user_age = int(input("What of your age, <name>? "))
 
 # Checking if age between 5-12
-if age < 5:
-    print(f"{age} is too young for you to play")
+if user_age < 5:
+    print(f"{user_age} is too young for you to play")
     print("Program ends")
-elif age > 12:
-    print(f"{age} is too old for you to play")
+elif user_age > 12:
+    print(f"{user_age} is too old for you to play")
     print("Program ends")
 else:
-    print(f"You are {age} years old")
+    print(f"You are {user_age} years old")
     print("Program continues")
 
 

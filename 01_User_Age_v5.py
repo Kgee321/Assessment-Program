@@ -1,13 +1,13 @@
-"""Base component -- Version 1
-Welcome screen created here
-Adding each component as they are added
-Not much editing done to the code
-Written by Katelyn Gee
-created on 3/05/2022
+"""Component 1 (User Age) -- Version 4
+Removing the parts of the code I added for testing including loops and
+extra print statement that were in version 3 so it is ready to be
+pasted into the 00_MQ_Base_v1.
+Also making the code quit/stop if user is too young or old.
+Written by the Katelyn
+Created on 4/05/2022
 """
 
 
-# number checker
 def num_checker(question, low, high, answer1, answer2):
 
     # Stored Variable
@@ -22,7 +22,7 @@ def num_checker(question, low, high, answer1, answer2):
 
             # Checking if age between 5-12
             if age < low:
-                print
+                return answer1
             elif age > high:
                 return answer2
             else:
@@ -32,14 +32,6 @@ def num_checker(question, low, high, answer1, answer2):
             print(ERROR)
 
 
-# Welcome screen
-print(f"{'--'*10} Maori Numbers 1 to 10 Quiz {'--'*10}")
-print()
-
-# User name
-name = input("What is your name?")
-print(f"Welcome {name}") # Remove in next version -- delete this
-
 # user age
 user_age = num_checker("What of your age, <name>? ", 5, 12, "young", "old")
 
@@ -47,6 +39,17 @@ user_age = num_checker("What of your age, <name>? ", 5, 12, "young", "old")
 if user_age == "young" or user_age == "old":
     print(f"Sorry, you are too {user_age} to play")
     quit()
+
+
+
+
+
+
+
+
+
+
+
 
 
 

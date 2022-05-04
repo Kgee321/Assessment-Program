@@ -11,19 +11,25 @@ valid = False
 while not valid:
     try:
 
-    # Ask users age
-    age = int(input("What of your age, <name>? "))
+        # Ask users age
+        user_age = int(input("What of your age, <name>? "))
 
-# Checking if age between 5-12
-if age < 5:
-    print(f"{age} is too young for you to play")
-    print("Program ends")
-elif age > 12:
-    print(f"{age} is too old for you to play")
-    print("Program ends")
-else:
-    print(f"You are {age} years old")
-    print("Program continues")
+        # Checking if age between 5-12
+        if user_age < 5:
+            print(f"{user_age} is too young for you to play")
+            print("Program ends")
+            break
+        elif user_age > 12:
+            print(f"{user_age} is too old for you to play")
+            print("Program ends")
+            break
+        else:
+            print(f"You are {user_age} years old")
+            print("Program continues")
+            valid = True
+
+    except ValueError:
+        print(ERROR)
 
 
 
