@@ -18,13 +18,11 @@ def checker(question_text, question1, question2):
         if answer == question1 or answer == question1[0]:
             answer = question1.title()
             return answer
-            print("Program continues")
 
         # if they say no, out 'instructions displayed'
         elif answer == question2 or answer == question2[0]:
             answer = question2.title()
             return answer
-            print("Display instructions")
 
         # otherwise - show error
         else:

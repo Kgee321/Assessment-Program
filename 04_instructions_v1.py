@@ -1,5 +1,7 @@
 """Component 2 (instructions) -- Version 1
-Took function from"""
+Took function from 03_v2 as the basis for this new function which
+incorporates both checker and show instructions"""
+
 # function goes here..
 def checker(question_text, question1, question2):
     while True:
@@ -10,8 +12,7 @@ def checker(question_text, question1, question2):
         # if they say yes, output 'program continues'
         if answer == question1 or answer == question1[0]:
             answer = question1.title()
-            return answer
-            print("Program continues")
+
 
         # if they say no, out 'instructions displayed'
         elif answer == question2 or answer == question2[0]:
