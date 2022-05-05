@@ -32,6 +32,30 @@ def num_checker(question, low, high, answer1, answer2):
             print(ERROR)
 
 
+# checker function -- can functions to generic name in next version -- delete this
+def yes_no(question_text, question1, question2):
+    while True:
+
+        # Ask the user if they have played before
+        answer = input(question_text).lower()
+
+        # if they say yes, output 'program continues'
+        if answer == question1 or answer == question1[0]:
+            answer = question1.title()
+            return answer
+            print("Program continues")
+
+        # if they say no, out 'instructions displayed'
+        elif answer == question2 or answer == question2[0]:
+            answer = question2.title()
+            return answer
+            print("Display instructions")
+
+        # otherwise - show error
+        else:
+            print("Please answer 'yes' or 'no'")
+
+
 # Welcome screen
 print(f"{'--'*10} Maori Numbers 1 to 10 Quiz {'--'*10}")
 print()
@@ -47,6 +71,10 @@ user_age = num_checker("What of your age, <name>? ", 5, 12, "young", "old")
 if user_age == "young" or user_age == "old":
     print(f"Sorry, you are too {user_age} to play")
     quit()
+
+# Yes/no Checker
+show_instruction = yes_no("Have you played this quiz before? ", "yes", "no")
+
 
 
 

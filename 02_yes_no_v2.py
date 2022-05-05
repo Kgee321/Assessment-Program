@@ -1,4 +1,4 @@
-"""Component 2 (yes/no checker) -- version 1
+"""Component 2 (yes/no checker) -- version 2
 Simplifies the input by converting  it to lower case.
 Also accepts y or n as abbreviations.
 Prints result of user choice as well as input -- for testing
