@@ -1,5 +1,5 @@
 """Component 2 (yes/no checker) -- version 1
-Asking user if they have played before and printing their answer
+Asking user if they have played before and printing what the program will do next
 Written by Katelyn Gee
 Created on the 5/05/2022
 """
