@@ -22,7 +22,7 @@ def num_checker(question, low, high, answer1, answer2):
 
             # Checking if age between 5-12
             if age < low:
-                print
+                return answer1
             elif age > high:
                 return answer2
             else:
@@ -32,8 +32,8 @@ def num_checker(question, low, high, answer1, answer2):
             print(ERROR)
 
 
-# checker function -- can functions to generic name in next version -- delete this
-def yes_no(question_text, question1, question2):
+# Checker functions
+def checker(question_text, question1, question2):
     while True:
 
         # Ask the user if they have played before
@@ -43,17 +43,24 @@ def yes_no(question_text, question1, question2):
         if answer == question1 or answer == question1[0]:
             answer = question1.title()
             return answer
-            print("Program continues")
 
         # if they say no, out 'instructions displayed'
         elif answer == question2 or answer == question2[0]:
             answer = question2.title()
             return answer
-            print("Display instructions")
 
         # otherwise - show error
         else:
-            print("Please answer 'yes' or 'no'")
+            print(f"Please answer '{question1}' or '{question2}'")
+
+
+# Instructions functions
+def instructions():
+    print("**** How to play ****")
+    print()
+    print("The rules of the game will go here")
+    print()
+    print("Program continues")
 
 
 # Welcome screen
@@ -61,19 +68,32 @@ print(f"{'--'*10} Maori Numbers 1 to 10 Quiz {'--'*10}")
 print()
 
 # User name
-name = input("What is your name?")
+name = input("What is your name? ").title()
 print(f"Welcome {name}") # Remove in next version -- delete this
+print()
 
 # user age
-user_age = num_checker("What of your age, <name>? ", 5, 12, "young", "old")
+user_age = num_checker(f"What is your age, {name}? ", 5, 12, "young", "old")
 
 # Checking if user is too old or to young
 if user_age == "young" or user_age == "old":
-    print(f"Sorry, you are too {user_age} to play")
+    print(f"Sorry {name}, you are too {user_age} to play")
     quit()
 
-# Yes/no Checker
-show_instruction = yes_no("Have you played this quiz before? ", "yes", "no")
+# Yes/No checker
+played_before = checker("Have you played this quiz before (y/n)? ", "yes", "no")
+print()
+
+# Instructions displayed
+if played_before == "No":
+    instructions()
+
+# Hard mode or easy mode
+hard_easy = checker("Do you want to play hard mode (h) or easy (e)? ", "easy", "hard")
+
+
+
+
 
 
 

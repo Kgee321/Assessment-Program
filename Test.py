@@ -2,7 +2,7 @@
 Katelyn Gee
 3/05/2022"""
 
-print("Hello World")
+import random
 
 
 def test_one():
@@ -18,4 +18,15 @@ def test_one():
     print(f"Hi {name}")
 
 
-test_one()
+def test_two(language, test_list):
+    choice = random.choice(test_list)
+    question1 = input(f"What is {choice} in {language}? (enter a number)")
+
+
+    return choice
+
+
+print(test_two("english", ["Tahi", "Rua", "Toru", "Wha"]))
+
+
+

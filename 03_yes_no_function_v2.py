@@ -26,7 +26,7 @@ def checker(question_text, question1, question2):
 
         # otherwise - show error
         else:
-            print("Please answer 'yes' or 'no'")
+            print(f"Please answer with '{question1}' or '{question2}'")
 
 
 # Main routine goes here...

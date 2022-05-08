@@ -14,7 +14,7 @@ while not 5 <= user_age <= 12:
     try:
 
         # Ask users age
-        user_age = int(input("What of your age, <name>? "))
+        user_age = int(input("What is your age, <name>? "))
         print()
 
     except ValueError:

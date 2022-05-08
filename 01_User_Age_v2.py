@@ -12,7 +12,7 @@ while not valid:
     try:
 
         # Ask users age
-        user_age = int(input("What of your age, <name>? "))
+        user_age = int(input("What is your age, <name>? "))
 
         # Checking if age between 5-12
         if user_age < 5:

@@ -9,7 +9,7 @@ Created on 3/05/2022
 """
 
 # Ask users age
-user_age = int(input("What of your age, <name>? "))
+user_age = int(input("What is your age, <name>? "))
 
 # Checking if age between 5-12
 if user_age < 5:

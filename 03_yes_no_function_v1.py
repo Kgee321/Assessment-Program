@@ -17,13 +17,11 @@ def yes_no(question_text):
         if answer == "yes" or answer == "y":
             answer = "Yes"
             return answer
-            print("Program continues")
 
         # if they say no, out 'instructions displayed'
         elif answer == "no" or answer == "n":
             answer = "No"
             return answer
-            print("Display instructions")
 
         # otherwise - show error
         else:

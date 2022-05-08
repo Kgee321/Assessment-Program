@@ -33,7 +33,7 @@ def num_checker(question, low, high, answer1, answer2):
 
 
 # user age
-user_age = num_checker("What of your age, <name>? ", 5, 12, "young", "old")
+user_age = num_checker("What is your age, <name>? ", 5, 12, "young", "old")
 
 # Checking if user is too old or to young
 if user_age == "young" or user_age == "old":

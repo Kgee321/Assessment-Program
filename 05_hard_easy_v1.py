@@ -1,8 +1,9 @@
-"""Component 2 (instructions) -- Version 1
-Took function from 03_v2 as the basis for this new function which
-incorporates both checker and show instructions
+""" Component 3 (Hard/Easy mode)
+I am going to use the recyclable checker function I created in yes_no_function_v2
+to make sure the user gives the right response for easy mode or hard mode.
+Also looping the function for testing
 Written by Katelyn Gee
-Created by 7/05/2022"""
+created on the 7/05/2022"""
 
 
 # Checker functions
@@ -24,24 +25,11 @@ def checker(question_text, question1, question2):
 
         # otherwise - show error
         else:
-            print(f"Please answer '{question1}' or '{question2}'")
-
-
-# Instructions functions
-def instructions():
-    print("**** How to play ****")
-    print()
-    print("The rules of the game will go here")
-    print()
-    print("Program continues")
+            print(f"Please answer with '{question1}' or '{question2}'")
 
 
 # Main routine goes here...
-played_before = checker("Have you played this quiz before? ", "yes", "no")
-
-if played_before == "No":
-    instructions()
-else:
-    print("Program continues")
-
-
+while "y" != "x":
+    hard_easy = checker("Do you want to play hard mode (h) or easy mode (e)? ", "hard", "easy")
+    print(f"You are playing '{hard_easy}' mode")
+    print()
