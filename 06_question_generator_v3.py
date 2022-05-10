@@ -15,12 +15,14 @@ score = 0
 maori_numbers = ["Tahi", "Rua", "Toru", "Wha", "Rima", "Ono", "Whitu", "Waru", "Iwa", "Tekau"]
 
 for i in range(10):
+
     # Random Maori number chosen
     maori_choice = random.choice(maori_numbers)
 
     # Round number
     rounds = i + 1
     print(f"{'--' * 5} Round {rounds} {'--' * 5}")
+    print()
 
     # Asking the user for the english translation of random Maori number
     question = int(input(f"What is {maori_choice} in English? (Answer using numbers) "))
@@ -36,12 +38,21 @@ for i in range(10):
             maori_choice == "Waru" and question == 8 or \
             maori_choice == "Iwa" and question == 9 or \
             maori_choice == "Tekau" and question == 10:
+
+        # If answer correct
         answer = "right!"
         score += 1
+
+        # Removing Maori numbers that have been used to avoid questions repeating
         maori_numbers.remove(maori_choice)
     else:
+        # if answer wrong
         answer = "wrong"
 
+    # printing if user is right or wrong
     print(f"You got it {answer}")
+    print()
 
+# printing user score out of 10
 print(f"You got {score} out of 10 points")
+
