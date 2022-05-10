@@ -20,6 +20,7 @@ for number in range(5):
     # Round number
     rounds = number + 1
     print(f"{'--' * 5} Round {rounds} {'--' * 5}")
+    print()
 
     # Asking the user for the english translation of random Maori number
     question = int(input(f"What is {maori_choice} in English? (Answer using numbers) "))

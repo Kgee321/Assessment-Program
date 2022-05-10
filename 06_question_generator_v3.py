@@ -2,6 +2,7 @@
 Adding in the rest of the Te Rao numbers
 Also adding score and rounds
 Looping question so 5 questions/rounds play
+Removing Maori numbers once they have been used so that questions are not repeated
 Written by Katelyn Gee
 Created 9/05/2022"""
 
@@ -13,7 +14,7 @@ score = 0
 # List of Maori words up to 10
 maori_numbers = ["Tahi", "Rua", "Toru", "Wha", "Rima", "Ono", "Whitu", "Waru", "Iwa", "Tekau"]
 
-for i in range(5):
+for i in range(10):
     # Random Maori number chosen
     maori_choice = random.choice(maori_numbers)
 
@@ -35,9 +36,12 @@ for i in range(5):
             maori_choice == "Waru" and question == 8 or \
             maori_choice == "Iwa" and question == 9 or \
             maori_choice == "Tekau" and question == 10:
-        print("You got it correct!")
+        answer = "right!"
         score += 1
+        maori_numbers.remove(maori_choice)
     else:
-        print("You got it wrong")
+        answer = "wrong"
 
-print(f"You got {score} out of 5 points")
+    print(f"You got it {answer}")
+
+print(f"You got {score} out of 10 points")
