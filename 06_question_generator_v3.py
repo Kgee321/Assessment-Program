@@ -1,4 +1,4 @@
-"""Component 4 (Random Question) -- Easy mode -- Version 1
+"""Component 4 (Random Generator) -- Version 3
 Adding in the rest of the Te Rao numbers
 Also adding score and rounds
 Looping question so 5 questions/rounds play

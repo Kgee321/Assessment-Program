@@ -1,7 +1,8 @@
-"""Component 4 (Random Question) -- Easy mode -- Version 4
+"""Component 4 (Random Generator) -- Version 4
 Using a range loop to check if user got the answer right instead of
-having the very long if statement to making code more efficient
+having the very long if statement to make code more efficient
 Removing Maori numbers once they have been used so that questions are not repeated
+if they got the answer right
 Written by Katelyn Gee
 Created 9/05/2022"""
 

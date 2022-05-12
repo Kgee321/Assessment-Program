@@ -1,4 +1,4 @@
-"""Component 4 (Random Question) -- Easy mode -- Version 1
+"""Component 4 (Random Generator) -- Version 2
 Removing testing loop
 limiting amount of Maori numbers to 4 number for testing
 Turn print statement into a question

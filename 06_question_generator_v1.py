@@ -1,4 +1,4 @@
-"""Component 4 (Random Question) -- Easy mode -- Version 1
+"""Component 4 (Random Generator) -- Version 1
 Chooses a random Te Rao number and prints it in a question format
 Testing if I have chosen a random Maori number correctly
 It works!
