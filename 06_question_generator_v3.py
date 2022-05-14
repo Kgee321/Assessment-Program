@@ -1,58 +1,40 @@
-"""Component 4 (Random Generator) -- Version 3
-Adding in the rest of the Te Rao numbers
-Also adding score and rounds
-Looping question so 5 questions/rounds play
-Removing Maori numbers once they have been used so that questions are not repeated
+"""Component 4 (Random Generator) -- Version 3 -- Trial 2
+Trying a different way of choosing a random question
+by having answers and questions in one long list
+and shuffling the list.
 Written by Katelyn Gee
 Created 9/05/2022"""
 
 import random
 
-# Variables
-score = 0
+# List of English and Maori numbers
+numbers = [["1", "One", "Tahi"],
+           ["2", "Two", "Rua"],
+           ["3", "Three", "Toru"],
+           ["4", "Four", "Wha"],
+           ["5", "Five", "Rima"],
+           ["6", "Six", "Ono"],
+           ["7", "Seven", "Whitu"],
+           ["8", "Eight", "Waru"],
+           ["9", "Nine", "Iwa"],
+           ["10", "Ten", "Tekau"]]
 
-# List of Maori words up to 10
-maori_numbers = ["Tahi", "Rua", "Toru", "Wha", "Rima", "Ono", "Whitu", "Waru", "Iwa", "Tekau"]
+# Plays 5 rounds
+for i in range(5):
 
-for i in range(10):
+    # Mixes up the list so different question is chosen
+    random.shuffle(numbers)
 
-    # Random Maori number chosen
-    maori_choice = random.choice(maori_numbers)
+    # Asks the user the question
+    question = input("What is {} in English? ".format(numbers[0][2])).title()
 
-    # Round number
-    rounds = i + 1
-    print(f"{'--' * 5} Round {rounds} {'--' * 5}")
-    print()
-
-    # Asking the user for the english translation of random Maori number
-    question = int(input(f"What is {maori_choice} in English? (Answer using numbers) "))
-
-    # Checking if the user got the answer correct
-    if maori_choice == "Tahi" and question == 1 or \
-            maori_choice == "Rua" and question == 2 or \
-            maori_choice == "Toru" and question == 3 or \
-            maori_choice == "Wha" and question == 4 or \
-            maori_choice == "Rima" and question == 5 or \
-            maori_choice == "Ono" and question == 6 or \
-            maori_choice == "Whitu" and question == 7 or \
-            maori_choice == "Waru" and question == 8 or \
-            maori_choice == "Iwa" and question == 9 or \
-            maori_choice == "Tekau" and question == 10:
-
-        # If answer correct
+    # if user got it right -- numbers
+    if question == numbers[0][0] or question == numbers[0][1]:
         answer = "right!"
-        score += 1
 
-        # Removing Maori numbers that have been used to avoid questions repeating
-        maori_numbers.remove(maori_choice)
+    # if user got it wrong
     else:
-        # if answer wrong
         answer = "wrong"
 
-    # printing if user is right or wrong
     print(f"You got it {answer}")
     print()
-
-# printing user score out of 10
-print(f"You got {score} out of 10 points")
-

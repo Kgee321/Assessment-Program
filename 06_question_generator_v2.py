@@ -1,31 +1,42 @@
-"""Component 4 (Random Generator) -- Version 2
+"""Component 4 (Random Generator) -- Version 2 -- Trial 1
 Removing testing loop
-limiting amount of Maori numbers to 4 number for testing
-Turn print statement into a question
-Checking if user got the answer correct using an if statement
-Asking 4 questions
+Checking if user got the answer correct using a long if statement
+Asking 5 questions
 Written by Katelyn Gee
 Created 9/05/2022"""
 
 import random
 
-# Limiting Maori number list to Tahi for to test code efficiently
-maori_numbers = ["Tahi", "Rua", "Toru", "Wha"]
+# List of Maori words up to 10
+maori_numbers = ["Tahi", "Rua", "Toru", "Wha", "Rima", "Ono", "Whitu", "Waru", "Iwa", "Tekau"]
 
-# Asking 4 questions
-for i in range(4):
+for i in range(5):
 
     # Random Maori number chosen
     maori_choice = random.choice(maori_numbers)
 
     # Asking the user for the english translation of random Maori number
-    question = int(input(f"What is {maori_choice} in English? "))
+    question = int(input(f"What is {maori_choice} in English? (Answer using numbers) "))
 
     # Checking if the user got the answer correct
     if maori_choice == "Tahi" and question == 1 or \
             maori_choice == "Rua" and question == 2 or \
             maori_choice == "Toru" and question == 3 or \
-            maori_choice == "Wha" and question == 4:
-        print("You got it correct!")
+            maori_choice == "Wha" and question == 4 or \
+            maori_choice == "Rima" and question == 5 or \
+            maori_choice == "Ono" and question == 6 or \
+            maori_choice == "Whitu" and question == 7 or \
+            maori_choice == "Waru" and question == 8 or \
+            maori_choice == "Iwa" and question == 9 or \
+            maori_choice == "Tekau" and question == 10:
+
+        # If answer correct
+        answer = "right!"
+
     else:
-        print("You got it wrong")
+        # if answer wrong
+        answer = "wrong"
+
+    # printing if user is right or wrong
+    print(f"You got it {answer}")
+    print()
