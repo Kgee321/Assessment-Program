@@ -51,11 +51,24 @@ def random_generator(list1, list2, asking, rounds):
 # List of Maori words up to 10
 maori_numbers = ["Tahi", "Rua", "Toru", "Wha", "Rima", "Ono", "Whitu", "Waru", "Iwa", "Tekau"]
 english_numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+number_of_rounds = 10
 
-# Calling on function
+# coping list so code can be tested twice
+maori_list = maori_numbers.copy()
+english_list = english_numbers.copy()
+
+# Calling on function for hard mode
+print("Hard mode \n")
 final_score = random_generator(english_numbers, maori_numbers,
-                               "What is {} in Maori? (Answer only using numbers) ", 10)
+                               "What is {} in Maori? ", number_of_rounds)
 
 # Telling user there score
-print()
-print(f"You got {final_score} out of 10 correct")
+print(f"\nYou got {final_score} out of 10 correct")
+
+# Calling on function for easy mode
+print("Easy mode \n")
+other_final_score = random_generator(maori_list, english_list,
+                                     "What is {} in English? (Answer only using numbers) ", number_of_rounds)
+
+# Telling user there score
+print(f"\nYou got {other_final_score} out of {number_of_rounds} correct")
