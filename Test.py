@@ -28,3 +28,16 @@ def test_two(language, test_list):
     else:
         print("You got it wrong!")
 
+
+def test_three():
+    text = "Hello world"
+    sides = "$" * 3
+
+    formatted_text = f"{sides} {text} {sides}"
+    top_bottom = "*" * len(formatted_text)
+
+    print(top_bottom)
+    print(formatted_text)
+    print(top_bottom)
+
+test_three()
