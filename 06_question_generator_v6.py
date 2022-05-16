@@ -1,8 +1,11 @@
 """Component 4 (Random Generator) -- Version 6
-Using  06_v3 as the base of this code.
+Using  06_v3 as the base of this code. Getting code ready so it can
+be converted into a function.
 Changing amount of questions asked to 10 (because there is 10 questions possible)
 Also adding feedback to the user by telling them the correct answer when they get it wrong.
 Removing te rao numbers so questions do not repeat in one game
+Adding in score so user knows their final score at the end
+Adding in English numbers spelt with letters so user can enter either 1 or one and get it right
 Written by Katelyn Gee
 Created 11/05/2022"""
 

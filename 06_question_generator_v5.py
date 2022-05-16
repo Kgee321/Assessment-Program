@@ -1,10 +1,11 @@
 """Component 4 (Random Generator) -- Version 5
-Using  06_v4 to improve so it can be used in final code.
+Using  06_v4 so it is ready to be converted into a functions
 Changing code so that numbers_list can contain strings instead of only numbers
 Also adding feedback to the user by telling them the correct answer when they get it wrong.
 Removing te rao numbers so questions do not repeat in one game
 Also changing the amount of questions asked into a while loop to make code
 more precise.
+Also adding in score variable so the program can tell the user what their final score is
 Written by Katelyn Gee
 Created 10/05/2022"""
 

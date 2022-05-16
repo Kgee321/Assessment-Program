@@ -1,10 +1,13 @@
 """Base component -- Version 1
 Welcome screen created here
+Also asks for user's name
 Adding each component as they are added
 Not much editing done to the code
 Written by Katelyn Gee
 created on 3/05/2022
 """
+
+import random
 
 
 # number checker
@@ -101,7 +104,7 @@ print()
 
 # User name
 name = input("What is your name? ").title()
-print(f"Welcome {name}") # Remove in next version -- delete this
+print(f"Welcome {name}")
 print()
 
 # user age
@@ -146,10 +149,17 @@ else:
     print("Hard Mode:\n")
     final_score = random_generator(numbers, "What is {} in Maori? ",
                                    2, 0, 0, number_of_rounds)
-# printing final score
+# printing final score and farewell
 print(f"\nYou got {final_score} out of {number_of_rounds}")
+print()
+print("Farewell! I hope you enjoyed playing this Te Rao quiz!")
 
-
+"""Delete -- 
+Remove telling user name
+Add user name in places
+Put in formatter
+Add in round numbers in random_generator function
+"""
 
 
 

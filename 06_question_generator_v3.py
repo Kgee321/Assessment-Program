@@ -8,16 +8,16 @@ Created 9/05/2022"""
 import random
 
 # List of English and Maori numbers
-numbers = [["1", "One", "Tahi"],
-           ["2", "Two", "Rua"],
-           ["3", "Three", "Toru"],
-           ["4", "Four", "Wha"],
-           ["5", "Five", "Rima"],
-           ["6", "Six", "Ono"],
-           ["7", "Seven", "Whitu"],
-           ["8", "Eight", "Waru"],
-           ["9", "Nine", "Iwa"],
-           ["10", "Ten", "Tekau"]]
+numbers = [["1", "Tahi"],
+           ["2", "Rua"],
+           ["3", "Toru"],
+           ["4", "Wha"],
+           ["5", "Rima"],
+           ["6", "Ono"],
+           ["7", "Whitu"],
+           ["8", "Waru"],
+           ["9", "Iwa"],
+           ["10", "Tekau"]]
 
 # Plays 5 rounds
 for i in range(5):
@@ -26,10 +26,10 @@ for i in range(5):
     random.shuffle(numbers)
 
     # Asks the user the question
-    question = input("What is {} in English? ".format(numbers[0][2])).title()
+    question = input("What is {} in English? ".format(numbers[0][1])).title()
 
     # if user got it right -- numbers
-    if question == numbers[0][0] or question == numbers[0][1]:
+    if question == numbers[0][0]:
         answer = "right!"
 
     # if user got it wrong
