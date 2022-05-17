@@ -1,5 +1,5 @@
 """Component 4 (Random Generator) -- Function -- Version 3
-This version was created to easily test my code
+This version was created to easily test my code so it is easy to screenshot
 Created 16/05/2022"""
 
 import random

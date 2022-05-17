@@ -1,16 +1,16 @@
 """Base component -- Version 1
-Welcome screen created here
-Also asks for user's name
-Adding each component as they are added
-Not much editing done to the code
+Adding user's name in places to make the user feel appreciated
+Put in formatter function to make important statements stand out
+Add in the round number into random_generator function
+Also adding in the instructions
 Written by Katelyn Gee
-created on 3/05/2022
+created on 18/05/2022
 """
 
 import random
 
 
-# number checker
+# Number checker function
 def num_checker(question, low, high, answer1, answer2):
 
     # Stored Variable
@@ -35,7 +35,7 @@ def num_checker(question, low, high, answer1, answer2):
             print(ERROR)
 
 
-# Checker functions
+# Checker function
 def checker(question_text, question1, question2):
     while True:
 
@@ -57,22 +57,23 @@ def checker(question_text, question1, question2):
             print(f"Please answer '{question1}' or '{question2}'")
 
 
-# Instructions functions
+# Instructions function
 def instructions():
-    print("**** How to play ****")
-    print()
+    formatter("^", "Instructions")
     print("The rules of the game will go here")
     print()
-    print("Program continues")
 
 
-# Random question generator functions
+# Random question generator function
 def random_generator(lists, asking, num1, num2, num3, rounds):
     # Variables
     score = 0
 
     # Plays 5 rounds
-    for i in range(rounds):
+    for round_number in range(rounds):
+
+        # number of rounds
+        formatter("~", f"Round {round_number + 1}")
 
         # Mixes up the list so different question is chosen
         random.shuffle(lists)
@@ -83,32 +84,60 @@ def random_generator(lists, asking, num1, num2, num3, rounds):
         # if user got it right
         if question == lists[0][num1] or question == lists[0][num3]:
             answer = "right! Congratulations!"
+            sign = "!"
             score += 1
 
         # if user got it wrong
         else:
             answer = f"wrong, the correct answer was '{lists[0][num1]}'. Try again next time! "
+            sign = "#"
 
         # printing if user was right or wrong
-        print(f"You got it {answer}")
+        print()
+        formatter(sign, f"You got it {answer}")
         print()
 
         # To avoid questions being repeated, each question is removed once displayed
         lists.pop(0)
-    return score
+
+    formatter("=", f"You got {score} out of {rounds}")
+
+    if score < 5:
+        responce = "You need to learn your Maori numbers!"
+    if score == 10:
+        responce = "Well done! You got them all right!"
+    else:
+        responce = "Good job!"
+
+    return responce
+
+
+# Formatting statement function
+def formatter(symbol, text):
+
+    # Creating formatted statement
+    sides = symbol * 3
+    formatted_text = f"{sides} {text} {sides}"
+    top_bottom = symbol * len(formatted_text)
+
+    # printing formatted statement
+    print(top_bottom)
+    print(formatted_text)
+    print(top_bottom)
+    print()
 
 
 # Welcome screen
-print(f"{'--'*10} Maori Numbers 1 to 10 Quiz {'--'*10}")
-print()
+formatter("-", "Welcome to the Māori numbers quiz")
+
 
 # User name
 name = input("What is your name? ").title()
-print(f"Welcome {name}")
 print()
 
 # user age
 user_age = num_checker(f"What is your age, {name}? ", 5, 12, "young", "old")
+print()
 
 # Checking if user is too old or to young
 if user_age == "young" or user_age == "old":
@@ -125,6 +154,7 @@ if played_before == "No":
 
 # Asking user if they want easy mode or hard mode
 hard_easy = checker("Do you want to play hard mode (h) or easy mode (e)? ", "hard", "easy")
+print()
 
 # List of English and Maori numbers
 numbers = [["1", "One", "Tahi"],
@@ -137,23 +167,25 @@ numbers = [["1", "One", "Tahi"],
            ["8", "Eight", "Waru"],
            ["9", "Nine", "Iwa"],
            ["10", "Ten", "Tekau"]]
+
+# Numbers of rounds user will play
 number_of_rounds = 10
 
+# Easy or hard mode printed
+formatter("+", f"{hard_easy} Mode:")
+
+# User plays easy mode
 if hard_easy == "Easy":
-    # User plays easy mode
-    print("Easy Mode:\n")
     final_score = random_generator(numbers, "What is {} in English? ",
                                    0, 2, 1, number_of_rounds)
+# User plays hard mode
 else:
-    # User plays hard mode
-    print("Hard Mode:\n")
     final_score = random_generator(numbers, "What is {} in Maori? ",
                                    2, 0, 0, number_of_rounds)
-# printing final score and farewell
-print(f"\nYou got {final_score} out of {number_of_rounds}")
-print()
-print("Nice Job! Farewell ")
 
+# printing final score and farewell
+
+formatter("*", f"Nice Job! Farewell {name} ")
 
 
 
