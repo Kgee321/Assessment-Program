@@ -127,7 +127,7 @@ def random_generator(lists, asking, num1, num2, num3, rounds, language):
     if score == 10:
         response = "Well done! You got them all right!"
     else:
-        response = "Good job!"
+        response = "Good job! Try to get them all right next time!"
 
     return response
 
@@ -176,16 +176,11 @@ hard_easy = checker("Do you want to play hard mode (h) or easy mode (e)? ", "har
 print()
 
 # List of English and Maori numbers
-numbers = [["1", "One", "Tahi"],
-           ["2", "Two", "Rua"],
-           ["3", "Three", "Toru"],
-           ["4", "Four", "Wha"],
-           ["5", "Five", "Rima"],
-           ["6", "Six", "Ono"],
-           ["7", "Seven", "Whitu"],
-           ["8", "Eight", "Waru"],
-           ["9", "Nine", "Iwa"],
-           ["10", "Ten", "Tekau"]]
+numbers = [["1", "One", "Tahi"], ["2", "Two", "Rua"],
+           ["3", "Three", "Toru"], ["4", "Four", "Wha"],
+           ["5", "Five", "Rima"], ["6", "Six", "Ono"],
+           ["7", "Seven", "Whitu"], ["8", "Eight", "Waru"],
+           ["9", "Nine", "Iwa"], ["10", "Ten", "Tekau"]]
 
 # Variables
 number_of_rounds = 10
