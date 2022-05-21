@@ -1,9 +1,7 @@
-"""Base component -- Version 2
-Adding user's name in places to make the user feel appreciated
-Put in formatter function to make important statements stand out
-Add in the round number into random_generator function
+"""Base component -- Version 3
+Adding in the quiz instructions and other edits
 Written by Katelyn Gee
-created on 18/05/2022
+created on 21/05/2022
 """
 
 import random
@@ -58,8 +56,31 @@ def checker(question_text, question1, question2):
 
 # Instructions function
 def instructions():
+
+    # How to play my game:
     formatter("^", "Instructions")
-    print("The rules of the game will go here")
+    print('Welcome to my Te Rao Māori quiz. Here some rule and instructions you will '
+          'need to know before playing. Below, you will get asked if you want to play '
+          'Easy mode or Hard mode. For hard mode, type "H" or "Hard," while for '
+          'easy mode, type "E" or "Easy."')
+    print()
+    print('Easy mode means I will give you a Māori number and you will type '
+          'in its English translations. You can answer used numbers or words to respond. '
+          'For example, if I asked you what “kore” is in English, you will want to enter '
+          '“0” or “Zero” as that is the correct answer. If you want to respond with a word, '
+          'keep in mind that it must be spelt correctly, or it will be incorrect.')
+    print()
+    print('Hard mode means I will give you an English number and you will have to type '
+          'in its Māori translations. For example, if I ask you what “0” means in Māori, '
+          'you will want to enter “Kore” as that is the correct answer. Remember to spell '
+          'the Maori word correctly; otherwise, it will be incorrect.')
+    print()
+    print('My quiz has 10 questions that you must answer correctly in order to receive '
+          'one point. If you get it wrong, you will not get a point and I will tell '
+          'you the correct answer so you can get it right next time. If you do not '
+          'know the answer, just take a guess as you may have it right! At the end, I '
+          'will show you your final score out of 10 points. '
+          'Can you answer all the questions correctly?')
     print()
 
 
