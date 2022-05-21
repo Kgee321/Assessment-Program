@@ -1,5 +1,6 @@
 """Base component -- Version 3
 Adding in the quiz instructions and other edits
+Changing random_generator to questions as it suits the code more
 Written by Katelyn Gee
 created on 21/05/2022
 """
@@ -85,7 +86,7 @@ def instructions():
 
 
 # Random question generator function
-def random_generator(lists, asking, num1, num2, num3, rounds, language):
+def questions(lists, asking, num1, num2, num3, rounds):
     # Variables
     score = 0
 
@@ -123,7 +124,7 @@ def random_generator(lists, asking, num1, num2, num3, rounds, language):
     formatter("=", f"You got {score} out of {rounds}")
 
     if score < 5:
-        response = f"You need to learn your {language}!"
+        response = f"You need to do some more practise!"
     if score == 10:
         response = "Well done! You got them all right!"
     else:
@@ -182,20 +183,16 @@ numbers = [["1", "One", "Tahi"], ["2", "Two", "Rua"],
            ["7", "Seven", "Whitu"], ["8", "Eight", "Waru"],
            ["9", "Nine", "Iwa"], ["10", "Ten", "Tekau"]]
 
-# Variables
-number_of_rounds = 10
-
 # Easy or hard mode printed
 formatter("+", f"{hard_easy} Mode:")
 
 # User plays easy mode
 if hard_easy == "Easy":
-    final_score = random_generator(numbers, "What is {} in English? ",
-                                   0, 2, 1, number_of_rounds, "Maori numbers")
+    final_score = questions(numbers, "What is {} in English? ", 0, 2, 1, 10)
+
 # User plays hard mode
 else:
-    final_score = random_generator(numbers, "What is {} in Maori? ",
-                                   2, 0, 0, number_of_rounds, "Maori numbers")
+    final_score = questions(numbers, "What is {} in Maori? ", 2, 0, 0, 10)
 
 # printing final score and farewell
 formatter("*", f"{final_score} Farewell {name} ")
