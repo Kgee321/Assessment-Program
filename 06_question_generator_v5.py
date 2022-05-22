@@ -21,11 +21,6 @@ numbers_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
 while rounds != 10:
 
-    # Round number
-    rounds += 1
-    print(f"{'--' * 5} Round {rounds} {'--' * 5}")
-    print()
-
     # Random Maori number chosen
     maori_choice = random.choice(maori_numbers)
 

@@ -1,7 +1,7 @@
 """Component 4 (Random Generator) -- Version 1
 Chooses a random Te Rao number and prints it in a question format
 Testing if I have chosen a random Maori number correctly
-Then , chooses a random English numbers and prints in a question format
+Then chooses a random English numbers and prints in a question format
 Testing if I have chosen a random english number correctly
 Written by Katelyn Gee
 Created 9/05/2022"""
