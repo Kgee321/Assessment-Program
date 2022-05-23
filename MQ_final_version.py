@@ -10,7 +10,7 @@ import random
 def num_checker(question, low, high, answer1, answer2):
 
     # Stored Variable
-    ERROR = "Please enter a whole number \n"
+    ERROR = f"Please enter a whole number\n"
 
     # Keep asking until a valid number is entered
     while True:
@@ -60,8 +60,8 @@ def instructions():
     formatter("^", "Instructions")
     print('Welcome to my Te Rao Māori quiz. Here some rule and instructions you will '
           'need to know before playing. Below, you will get asked if you want to play '
-          'Easy mode or Hard mode. For hard mode, type "H" or "Hard," while for '
-          'easy mode, type "E" or "Easy."')
+          'Easy mode or Hard mode. For hard mode, type "H" or "Hard", while for '
+          'easy mode, type "E" or "Easy".')
     print()
     print('Easy mode means I will give you a Māori number and you will type '
           'in its English translations. You can answer used numbers or words to respond. '
@@ -92,7 +92,7 @@ def questions(lists, asking, num1, num2, num3, rounds):
     for round_number in range(rounds):
 
         # number of rounds
-        formatter("~", f"Round {round_number + 1}")
+        formatter("~", f"Question {round_number + 1}")
 
         # Mixes up the list so different question is chosen
         random.shuffle(lists)
@@ -106,14 +106,20 @@ def questions(lists, asking, num1, num2, num3, rounds):
             sign = "!"
             score += 1
 
+        # if user misspells the word
+        elif lists[0][num1][0] == question[0]:
+            answer = "so close, but the word was misspelt. " \
+                    f"The correct spelling was {lists[0][num1]} "
+
         # if user got it wrong
         else:
-            answer = f"wrong, the correct answer was '{lists[0][num1]}'. Try again next time! "
+            answer = f"so close! The correct answer was '{lists[0][num1]}'. " \
+                     "Try again next time! "
             sign = "#"
 
         # printing if user was right or wrong
         print()
-        formatter(sign, f"You got it {answer}")
+        formatter(sign, f"Your {answer}")
         print()
 
         # To avoid questions being repeated, each question is removed once displayed
@@ -121,9 +127,10 @@ def questions(lists, asking, num1, num2, num3, rounds):
 
     formatter("=", f"You got {score} out of {rounds}")
 
-    if score < 5:
-        response = f"You need to do some more practise!"
-    if score == 10:
+    # Giving user feedback
+    if score <= 5:
+        response = "Good start! I recommend you do some more practise!"
+    elif score == 10:
         response = "Well done! You got them all right!"
     else:
         response = "Good job! Try to get them all right next time!"
@@ -186,13 +193,13 @@ formatter("+", f"{hard_easy} Mode:")
 
 # User plays easy mode
 if hard_easy == "Easy":
-    final_score = questions(numbers, "What is {} in English? ", 0, 2, 1, 10)
+    final_score = questions(numbers, "What is {} in English? ", 1, 2, 0, 10)
 
 # User plays hard mode
 else:
     final_score = questions(numbers, "What is {} in Maori? ", 2, 0, 0, 10)
 
-# printing final score and farewell
+# feedback and goodbye statement
 formatter("*", f"{final_score} Farewell {name} ")
 
 

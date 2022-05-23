@@ -39,5 +39,3 @@ def test_three():
     print(top_bottom)
     print(formatted_text)
     print(top_bottom)
-
-test_three()
