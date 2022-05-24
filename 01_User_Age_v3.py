@@ -10,7 +10,7 @@ ERROR = "Please enter a whole number \n"
 user_age = 0
 
 # Keep asking until a valid number is entered
-while not 5 <= user_age <= 12:
+while not 8 <= user_age <= 14:
     try:
 
         # Ask users age

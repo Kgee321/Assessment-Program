@@ -36,7 +36,7 @@ def num_checker(question, low, high, answer1, answer2):
 
 valid = ""
 while valid != "x":
-    user_age = num_checker("What is your age, <name>? ", 5, 12, "too young", "too old")
+    user_age = num_checker("What is your age, <name>? ", 8, 14, "too young", "too old")
     print(f'You are {user_age}')
 
 

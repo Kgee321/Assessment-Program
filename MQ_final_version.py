@@ -8,7 +8,6 @@ import random
 
 # Number checker function
 def num_checker(question, low, high, answer1, answer2):
-
     # Stored Variable
     ERROR = f"Please enter a whole number\n"
 
@@ -55,32 +54,13 @@ def checker(question_text, question1, question2):
 
 # Instructions function
 def instructions():
-
     # How to play my game:
     formatter("^", "Instructions")
-    print('Welcome to my Te Rao Māori quiz. Here some rule and instructions you will '
-          'need to know before playing. Below, you will get asked if you want to play '
-          'Easy mode or Hard mode. For hard mode, type "H" or "Hard", while for '
-          'easy mode, type "E" or "Easy".')
-    print()
-    print('Easy mode means I will give you a Māori number and you will type '
-          'in its English translations. You can answer used numbers or words to respond. '
-          'For example, if I asked you what “kore” is in English, you will want to enter '
-          '“0” or “Zero” as that is the correct answer. If you want to respond with a word, '
-          'keep in mind that it must be spelt correctly, or it will be incorrect.')
-    print()
-    print('Hard mode means I will give you an English number and you will have to type '
-          'in its Māori translations. For example, if I ask you what “0” means in Māori, '
-          'you will want to enter “Kore” as that is the correct answer. Remember to spell '
-          'the Maori word correctly; otherwise, it will be incorrect.')
-    print()
-    print('My quiz has 10 questions that you must answer correctly in order to receive '
-          'one point. If you get it wrong, you will not get a point and I will tell '
-          'you the correct answer so you can get it right next time. If you do not '
-          'know the answer, just take a guess as you may have it right! At the end, I '
-          'will show you your final score out of 10 points. '
-          'Can you answer all the questions correctly?')
-    print()
+    print("Welcome to my Te Rao Māori quiz.\n")
+    print("Easy mode means you enter the English translation to the Māori number given.\n")
+    print("In hard mode, you do the opposite.\n")
+    print("My quiz is 10 questions long and I will give your final score out of 10 at the end.\n")
+    print("Good Luck!!\n")
 
 
 # Random question generator function
@@ -109,7 +89,8 @@ def questions(lists, asking, num1, num2, num3, rounds):
         # if user misspells the word
         elif lists[0][num1][0] == question[0]:
             answer = "so close, but the word was misspelt. " \
-                    f"The correct spelling was {lists[0][num1]} "
+                     f"The correct spelling was '{lists[0][num1]}' "
+            sign = "#"
 
         # if user got it wrong
         else:
@@ -119,7 +100,7 @@ def questions(lists, asking, num1, num2, num3, rounds):
 
         # printing if user was right or wrong
         print()
-        formatter(sign, f"Your {answer}")
+        formatter(sign, f"You are {answer}")
         print()
 
         # To avoid questions being repeated, each question is removed once displayed
@@ -131,16 +112,15 @@ def questions(lists, asking, num1, num2, num3, rounds):
     if score <= 5:
         response = "Good start! I recommend you do some more practise!"
     elif score == 10:
-        response = "Well done! You got them all right!"
+        response = "Congratulations!! You got them all right!"
     else:
-        response = "Good job! Try to get them all right next time!"
+        response = "Good job! You did well!"
 
     return response
 
 
 # Formatting statement function
 def formatter(symbol, text):
-
     # Creating formatted statement
     sides = symbol * 3
     formatted_text = f"{sides} {text} {sides}"
@@ -161,12 +141,14 @@ name = input("What is your name? ").title()
 print()
 
 # user age
-user_age = num_checker(f"What is your age, {name}? ", 5, 12, "young", "old")
+user_age = str(num_checker("What is your age, <name>? ", 8, 14,
+                           "young. You should try an easier Maori quiz",
+                           "old. You should try a harder Maori quiz"))
 print()
 
 # Checking if user is too old or to young
-if user_age == "young" or user_age == "old":
-    print(f"Sorry {name}, you are too {user_age} to play")
+if user_age[0] == "y" or user_age[0] == "o":
+    print(f"Sorry, you are too {user_age}.")
     quit()
 
 # Yes/No checker
@@ -201,8 +183,3 @@ else:
 
 # feedback and goodbye statement
 formatter("*", f"{final_score} Farewell {name} ")
-
-
-
-
-

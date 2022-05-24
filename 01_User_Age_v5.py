@@ -33,24 +33,12 @@ def num_checker(question, low, high, answer1, answer2):
 
 
 # user age
-user_age = num_checker("What is your age, <name>? ", 5, 12, "young", "old")
+user_age = str(num_checker("What is your age, <name>? ", 8, 14,
+                           "young. You should try an easier Maori quiz",
+                           "old. You should try a harder  Maori quiz"))
+print()
 
 # Checking if user is too old or to young
-if user_age == "young" or user_age == "old":
-    print(f"Sorry, you are too {user_age} to play")
+if user_age[0] == "y" or user_age[0] == "o":
+    print(f"Sorry, you are too {user_age}.")
     quit()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
