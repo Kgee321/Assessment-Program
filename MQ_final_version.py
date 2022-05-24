@@ -141,7 +141,7 @@ name = input("What is your name? ").title()
 print()
 
 # user age
-user_age = str(num_checker("What is your age, <name>? ", 8, 14,
+user_age = str(num_checker(f"What is your age, {name}? ", 8, 14,
                            "young. You should try an easier Maori quiz",
                            "old. You should try a harder Maori quiz"))
 print()
