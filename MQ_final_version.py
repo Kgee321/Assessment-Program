@@ -1,4 +1,5 @@
 """ Maori Quiz finished! -- All code complete
+Adding in Maori welcome and farewell statements
 Written by Katelyn Gee
 Created on 22/05/2022
 """
@@ -134,7 +135,7 @@ def formatter(symbol, text):
 
 
 # Welcome screen
-formatter("-", "Welcome to the Māori numbers quiz")
+formatter("-", "Haramai! Welcome to my Māori numbers quiz")
 
 # User name
 name = input("What is your name? ").title()
@@ -182,4 +183,4 @@ else:
     final_score = questions(numbers, "What is {} in Maori? ", 2, 0, 0, 10)
 
 # feedback and goodbye statement
-formatter("*", f"{final_score} Farewell {name} ")
+formatter("*", f"{final_score} Haere rā {name} ")
