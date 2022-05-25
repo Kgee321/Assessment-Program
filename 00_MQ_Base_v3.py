@@ -12,7 +12,7 @@ import random
 def num_checker(question, low, high, answer1, answer2):
 
     # Stored Variable
-    ERROR = "Please enter a whole number \n"
+    ERROR = f"Please enter a whole number\n"
 
     # Keep asking until a valid number is entered
     while True:
@@ -21,7 +21,7 @@ def num_checker(question, low, high, answer1, answer2):
             # Ask users age
             age = int(input(question))
 
-            # Checking if age between 5-12
+            # Checking if age meets required boundary
             if age < low:
                 return answer1
             elif age > high:
@@ -35,17 +35,19 @@ def num_checker(question, low, high, answer1, answer2):
 
 # Checker function
 def checker(question_text, question1, question2):
+
+    # Keep asking until valid input entered
     while True:
 
         # Ask the user if they have played before
         answer = input(question_text).lower()
 
-        # if they say yes, output 'program continues'
+        # if user input is the same as first response
         if answer == question1 or answer == question1[0]:
             answer = question1.title()
             return answer
 
-        # if they say no, out 'instructions displayed'
+        # if user input is the same second response
         elif answer == question2 or answer == question2[0]:
             answer = question2.title()
             return answer
@@ -61,25 +63,25 @@ def instructions():
     # How to play my game:
     formatter("^", "Instructions")
     print("Welcome to my Te Rao Māori quiz.\n")
-    print()
-    print("Easy mode means you enter the English translation to the Māori number given.\n")
-    print("In hard mode, you do the opposite.")
-    print()
-    print("My quiz is 10 questions long and I will give your final score out of 10 at the end.")
-    print()
-    print("Good Luck!!")
+    print("Easy mode means you enter the English translation to "
+          "the Māori number given.\n")
+    print("In hard mode, you do the opposite.\n")
+    print("My quiz is 10 questions long and I will give your final "
+          "score out of 10 at the end.\n")
+    print("Good Luck!!\n")
 
 
 # Random question generator function
 def questions(lists, asking, num1, num2, num3, rounds):
+
     # Variables
     score = 0
 
     # Plays 5 rounds
     for round_number in range(rounds):
 
-        # number of rounds
-        formatter("~", f"Round {round_number + 1}")
+        # Number of rounds
+        formatter("~", f"Question {round_number + 1}")
 
         # Mixes up the list so different question is chosen
         random.shuffle(lists)
@@ -87,33 +89,42 @@ def questions(lists, asking, num1, num2, num3, rounds):
         # Asks the user the question
         question = input(asking.format(lists[0][num2])).title()
 
-        # if user got it right
+        # If user is right
         if question == lists[0][num1] or question == lists[0][num3]:
             answer = "right! Congratulations!"
             sign = "!"
             score += 1
 
-        # if user got it wrong
-        else:
-            answer = f"wrong, the correct answer was '{lists[0][num1]}'. Try again next time! "
+        # If user misspells the word
+        elif lists[0][num1][0] == question[0]:
+            answer = "so close, but the word was misspelt. " \
+                     f"The correct spelling was '{lists[0][num1]}' "
             sign = "#"
 
-        # printing if user was right or wrong
+        # If user is wrong
+        else:
+            answer = f"so close! The correct answer was '{lists[0][num1]}'. " \
+                     "Try again next time! "
+            sign = "#"
+
+        # Printing if user is right, wrong or misspelt
         print()
-        formatter(sign, f"You got it {answer}")
+        formatter(sign, f"You are {answer}")
         print()
 
-        # To avoid questions being repeated, each question is removed once displayed
+        # Removing used questions to avoid them repeating
         lists.pop(0)
 
+    # Final score
     formatter("=", f"You got {score} out of {rounds}")
 
-    if score < 5:
-        response = f"You need to do some more practise!"
-    if score == 10:
-        response = "Well done! You got them all right!"
+    # Giving user feedback
+    if score <= 5:
+        response = "Good start! I recommend you do some more practise!"
+    elif score == 10:
+        response = "Congratulations!! You got them all right!"
     else:
-        response = "Good job! Try to get them all right next time!"
+        response = "Good job! You did well!"
 
     return response
 
@@ -134,31 +145,34 @@ def formatter(symbol, text):
 
 
 # Welcome screen
-formatter("-", "Welcome to the Māori numbers quiz")
+formatter("-", "Haramai! Welcome to my Māori numbers quiz")
 
 # User name
 name = input("What is your name? ").title()
 print()
 
 # user age
-user_age = num_checker(f"What is your age, {name}? ", 5, 12, "young", "old")
+user_age = str(num_checker(f"What is your age, {name}? ", 8, 14,
+                           "young. You should try an easier Maori quiz",
+                           "old. You should try a harder Maori quiz"))
 print()
 
 # Checking if user is too old or to young
-if user_age == "young" or user_age == "old":
-    print(f"Sorry {name}, you are too {user_age} to play")
+if user_age[0] == "y" or user_age[0] == "o":
+    print(f"Sorry, you are too {user_age}.")
     quit()
 
 # Yes/No checker
-played_before = checker("Have you played this quiz before (y/n)? ", "yes", "no")
+play_before = checker("Have you played this quiz before (y/n)? ", "yes", "no")
 print()
 
 # Instructions displayed
-if played_before == "No":
+if play_before == "No":
     instructions()
 
 # Asking user if they want easy mode or hard mode
-hard_easy = checker("Do you want to play hard mode (h) or easy mode (e)? ", "hard", "easy")
+hard_easy = checker("Do you want to play hard mode (h) or easy mode (e)? ",
+                    "hard", "easy")
 print()
 
 # List of English and Maori numbers
@@ -173,16 +187,11 @@ formatter("+", f"{hard_easy} Mode:")
 
 # User plays easy mode
 if hard_easy == "Easy":
-    final_score = questions(numbers, "What is {} in English? ", 0, 2, 1, 10)
+    final_score = questions(numbers, "What is {} in English? ", 1, 2, 0, 10)
 
 # User plays hard mode
 else:
     final_score = questions(numbers, "What is {} in Maori? ", 2, 0, 0, 10)
 
-# printing final score and farewell
-formatter("*", f"{final_score} Farewell {name} ")
-
-
-
-
-
+# feedback and goodbye statement
+formatter("*", f"{final_score} Haere rā {name} ")
