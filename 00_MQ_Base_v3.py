@@ -151,7 +151,7 @@ formatter("-", "Haramai! Welcome to my Māori numbers quiz")
 name = input("What is your name? ").title()
 print()
 
-# user age
+# User age
 user_age = str(num_checker(f"What is your age, {name}? ", 8, 14,
                            "young. You should try an easier Maori quiz",
                            "old. You should try a harder Maori quiz"))
@@ -182,7 +182,7 @@ numbers = [["1", "One", "Tahi"], ["2", "Two", "Rua"],
            ["7", "Seven", "Whitu"], ["8", "Eight", "Waru"],
            ["9", "Nine", "Iwa"], ["10", "Ten", "Tekau"]]
 
-# Easy or hard mode printed
+# Mode printed
 formatter("+", f"{hard_easy} Mode:")
 
 # User plays easy mode
@@ -193,5 +193,5 @@ if hard_easy == "Easy":
 else:
     final_score = questions(numbers, "What is {} in Maori? ", 2, 0, 0, 10)
 
-# feedback and goodbye statement
+# Feedback and goodbye statement
 formatter("*", f"{final_score} Haere rā {name} ")
