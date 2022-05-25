@@ -1,5 +1,4 @@
 """ Maori Quiz finished! -- All code complete
-Adding in Maori welcome and farewell statements
 Written by Katelyn Gee
 Created on 22/05/2022
 """
@@ -9,6 +8,7 @@ import random
 
 # Number checker function
 def num_checker(question, low, high, answer1, answer2):
+
     # Stored Variable
     ERROR = f"Please enter a whole number\n"
 
@@ -19,7 +19,7 @@ def num_checker(question, low, high, answer1, answer2):
             # Ask users age
             age = int(input(question))
 
-            # Checking if age between 5-12
+            # Checking if age meets required boundary
             if age < low:
                 return answer1
             elif age > high:
@@ -33,17 +33,19 @@ def num_checker(question, low, high, answer1, answer2):
 
 # Checker function
 def checker(question_text, question1, question2):
+
+    # Keep asking until valid input entered
     while True:
 
         # Ask the user if they have played before
         answer = input(question_text).lower()
 
-        # if they say yes, output 'program continues'
+        # if user input is the same as first response
         if answer == question1 or answer == question1[0]:
             answer = question1.title()
             return answer
 
-        # if they say no, out 'instructions displayed'
+        # if user input is the same second response
         elif answer == question2 or answer == question2[0]:
             answer = question2.title()
             return answer
@@ -55,24 +57,28 @@ def checker(question_text, question1, question2):
 
 # Instructions function
 def instructions():
+
     # How to play my game:
     formatter("^", "Instructions")
     print("Welcome to my Te Rao Māori quiz.\n")
-    print("Easy mode means you enter the English translation to the Māori number given.\n")
+    print("Easy mode means you enter the English translation to "
+          "the Māori number given.\n")
     print("In hard mode, you do the opposite.\n")
-    print("My quiz is 10 questions long and I will give your final score out of 10 at the end.\n")
+    print("My quiz is 10 questions long and I will give your final "
+          "score out of 10 at the end.\n")
     print("Good Luck!!\n")
 
 
 # Random question generator function
 def questions(lists, asking, num1, num2, num3, rounds):
+
     # Variables
     score = 0
 
     # Plays 5 rounds
     for round_number in range(rounds):
 
-        # number of rounds
+        # Number of rounds
         formatter("~", f"Question {round_number + 1}")
 
         # Mixes up the list so different question is chosen
@@ -81,32 +87,33 @@ def questions(lists, asking, num1, num2, num3, rounds):
         # Asks the user the question
         question = input(asking.format(lists[0][num2])).title()
 
-        # if user got it right
+        # If user is right
         if question == lists[0][num1] or question == lists[0][num3]:
             answer = "right! Congratulations!"
             sign = "!"
             score += 1
 
-        # if user misspells the word
+        # If user misspells the word
         elif lists[0][num1][0] == question[0]:
             answer = "so close, but the word was misspelt. " \
                      f"The correct spelling was '{lists[0][num1]}' "
             sign = "#"
 
-        # if user got it wrong
+        # If user is wrong
         else:
             answer = f"so close! The correct answer was '{lists[0][num1]}'. " \
                      "Try again next time! "
             sign = "#"
 
-        # printing if user was right or wrong
+        # Printing if user is right, wrong or misspelt
         print()
         formatter(sign, f"You are {answer}")
         print()
 
-        # To avoid questions being repeated, each question is removed once displayed
+        # Removing used questions to avoid them repeating
         lists.pop(0)
 
+    # Final score
     formatter("=", f"You got {score} out of {rounds}")
 
     # Giving user feedback
@@ -122,6 +129,7 @@ def questions(lists, asking, num1, num2, num3, rounds):
 
 # Formatting statement function
 def formatter(symbol, text):
+
     # Creating formatted statement
     sides = symbol * 3
     formatted_text = f"{sides} {text} {sides}"
@@ -153,15 +161,16 @@ if user_age[0] == "y" or user_age[0] == "o":
     quit()
 
 # Yes/No checker
-played_before = checker("Have you played this quiz before (y/n)? ", "yes", "no")
+play_before = checker("Have you played this quiz before (y/n)? ", "yes", "no")
 print()
 
 # Instructions displayed
-if played_before == "No":
+if play_before == "No":
     instructions()
 
 # Asking user if they want easy mode or hard mode
-hard_easy = checker("Do you want to play hard mode (h) or easy mode (e)? ", "hard", "easy")
+hard_easy = checker("Do you want to play hard mode (h) or easy mode (e)? ",
+                    "hard", "easy")
 print()
 
 # List of English and Maori numbers
