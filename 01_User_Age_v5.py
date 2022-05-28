@@ -38,7 +38,7 @@ user_age = str(num_checker("What is your age, <name>? ", 8, 14,
                            "old. You should try a harder  Maori quiz"))
 print()
 
-# Checking if user is too old or to young
+# Checking if user is too old or too young
 if user_age[0] == "y" or user_age[0] == "o":
     print(f"Sorry, you are too {user_age}.")
     quit()
