@@ -16,7 +16,7 @@ def num_checker(question, low, high, answer1, answer2):
     while True:
         try:
 
-            # Asks User question
+            # Asks user question
             number = int(input(question))
 
             # Checking if number meets required boundary
@@ -105,7 +105,7 @@ def questions(lists, asking, num1, num2, num3, rounds):
                      "Try again next time! "
             sign = "#"
 
-        # Printing if user is right, wrong or misspelled
+        # Prints if user is right, wrong or misspelled
         print()
         formatter(sign, f"You are {answer}")
         print()
