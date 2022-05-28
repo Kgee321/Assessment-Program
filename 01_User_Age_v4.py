@@ -22,7 +22,7 @@ def num_checker(question, low, high, answer1, answer2):
             # Ask users age
             age = int(input(question))
 
-            # Checking if age between 5-12
+            # Checking if age in the right boundary's
             if age < low:
                 return answer1
             elif age > high:
@@ -34,9 +34,12 @@ def num_checker(question, low, high, answer1, answer2):
             print(ERROR)
 
 
+# Repeating code for testing purposes
 valid = ""
 while valid != "x":
-    user_age = num_checker("What is your age, <name>? ", 8, 14, "too young", "too old")
+    user_age = num_checker("What is your age, <name>? ", 8, 14,
+                           "too young -- program ends",
+                           "too old -- program ends")
     print(f'You are {user_age}')
 
 

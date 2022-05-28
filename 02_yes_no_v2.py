@@ -21,4 +21,4 @@ elif show_instructions == "no" or show_instructions == "n":
 else:
     print("Please answer 'yes' or 'no'")
 
-print(f"You entered '{show_instructions}")
+print(f"You entered '{show_instructions}'")

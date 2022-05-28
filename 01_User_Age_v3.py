@@ -5,6 +5,7 @@ but it does not work to the standard it should.
 Written by Katelyn Gee
 Created on 4/05/2022
 """
+
 # Variables
 ERROR = "Please enter a whole number \n"
 user_age = 0
@@ -20,6 +21,7 @@ while not 8 <= user_age <= 14:
     except ValueError:
         print(ERROR)
 
+# Printing user age
 print(f"You are {user_age} years old")
 
 

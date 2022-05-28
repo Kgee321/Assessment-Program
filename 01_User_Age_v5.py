@@ -3,6 +3,7 @@ Removing the parts of the code I added for testing including loops and
 extra print statement that were in version 3 so it is ready to be
 pasted into the 00_MQ_Base_v1.
 Also making the code quit/stop if user is too young or old.
+Changing age to more generic name (number)
 Written by the Katelyn
 Created on 4/05/2022
 """
@@ -17,22 +18,22 @@ def num_checker(question, low, high, answer1, answer2):
     while True:
         try:
 
-            # Ask users age
-            age = int(input(question))
+            # Ask user question
+            number = int(input(question))
 
-            # Checking if age between 5-12
-            if age < low:
+            # Checking if number between boundary's
+            if number < low:
                 return answer1
-            elif age > high:
+            elif number > high:
                 return answer2
             else:
-                return age
+                return number
 
         except ValueError:
             print(ERROR)
 
 
-# user age
+# User age
 user_age = str(num_checker("What is your age, <name>? ", 8, 14,
                            "young. You should try an easier Maori quiz",
                            "old. You should try a harder  Maori quiz"))

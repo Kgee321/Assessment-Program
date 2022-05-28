@@ -3,6 +3,7 @@ Use try/accept and pull error message out of the loop
 Written by Katelyn Gee
 Created on 3/05/2022
 """
+
 # Variables
 ERROR = "Please enter a whole number \n"
 valid = False
@@ -14,20 +15,25 @@ while not valid:
         # Ask users age
         user_age = int(input("What is your age, <name>? "))
 
-        # Checking if age between 5-12
+        # If user younger than 8
         if user_age < 8:
             print(f"{user_age} is too young for you to play")
             print("Program ends")
             break
+
+        # If user older than 14
         elif user_age > 14:
             print(f"{user_age} is too old for you to play")
             print("Program ends")
             break
+
+        # Otherwise
         else:
             print(f"You are {user_age} years old")
             print("Program continues")
             valid = True
 
+    # If a string or float entered, game does not crash
     except ValueError:
         print(ERROR)
 
