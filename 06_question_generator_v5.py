@@ -3,8 +3,7 @@ Using  06_v4 so it is ready to be converted into a functions
 Changing code so that numbers_list can contain strings instead of only numbers
 Also adding feedback to the user by telling them the correct answer when they get it wrong.
 Removing te rao numbers so questions do not repeat in one game
-Also changing the amount of questions asked into a while loop to make code
-more precise.
+Also changing the amount of questions asked into a while loop to make code more precise.
 Also adding in score variable so the program can tell the user what their final score is
 Written by Katelyn Gee
 Created 10/05/2022"""
@@ -17,6 +16,8 @@ rounds = 0
 
 # List of Maori words up to 10
 maori_numbers = ["Tahi", "Rua", "Toru", "Wha", "Rima", "Ono", "Whitu", "Waru", "Iwa", "Tekau"]
+
+# List of English words to 10
 numbers_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
 while rounds != 10:
@@ -51,6 +52,6 @@ while rounds != 10:
     print(f"You got it {answer}")
     print()
 
-# Telling user there score
+# Telling user their final score
 print()
 print(f"You got {score} out of 10 correct")

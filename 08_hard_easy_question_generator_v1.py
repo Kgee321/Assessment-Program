@@ -10,32 +10,34 @@ import random
 
 # Checker functions
 def checker(question_text, question1, question2):
+
     while True:
 
-        # Ask the user if they have played before
+        # Asking user the question
         answer = input(question_text).lower()
 
-        # if they say yes, output 'program continues'
+        # If answer is the same as question 1
         if answer == question1 or answer == question1[0]:
             answer = question1.title()
             return answer
 
-        # if they say no, out 'instructions displayed'
+        # If answer is the same as question 2
         elif answer == question2 or answer == question2[0]:
             answer = question2.title()
             return answer
 
-        # otherwise - show error
+        # Otherwise - show error
         else:
             print(f"Please answer with '{question1}' or '{question2}'")
 
 
 # Random question generator functions
 def random_generator(lists, asking, num1, num2, num3, rounds):
+
     # Variables
     score = 0
 
-    # Plays 5 rounds
+    # Playing rounds
     for i in range(rounds):
 
         # Mixes up the list so different question is chosen
@@ -44,25 +46,26 @@ def random_generator(lists, asking, num1, num2, num3, rounds):
         # Asks the user the question
         question = input(asking.format(lists[0][num2])).title()
 
-        # if user got it right
+        # If user got it right
         if question == lists[0][num1] or question == lists[0][num3]:
             answer = "right! Congratulations!"
             score += 1
 
-        # if user got it wrong
+        # If user got it wrong
         else:
             answer = f"wrong, the correct answer was '{lists[0][num1]}'. Try again next time! "
 
-        # printing if user was right or wrong
+        # Printing if user was right or wrong
         print(f"You got it {answer}")
         print()
 
         # To avoid questions being repeated, each question is removed once displayed
         lists.pop(0)
+
     return score
 
 
-# asking user if they want easy mode or hard mode
+# Asking if user's wants to play easy mode or hard mode
 hard_easy = checker("Do you want to play hard mode (h) or easy mode (e)? ", "hard", "easy")
 
 # List of English and Maori numbers
@@ -78,17 +81,18 @@ numbers = [["1", "One", "Tahi"],
            ["10", "Ten", "Tekau"]]
 number_of_rounds = 10
 
+# User plays easy mode
 if hard_easy == "Easy":
-    # User plays easy mode
     print("Easy Mode:\n")
     final_score = random_generator(numbers, "What is {} in English? ",
                                    0, 2, 1, number_of_rounds)
+
+# User plays hard mode
 else:
-    # User plays hard mode
     print("Hard Mode:\n")
     final_score = random_generator(numbers, "What is {} in Maori? ",
                                    2, 0, 0, number_of_rounds)
-# printing final score
+# Printing final score
 print(f"\nYou got {final_score} out of {number_of_rounds}")
 
 

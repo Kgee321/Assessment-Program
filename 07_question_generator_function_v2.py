@@ -14,7 +14,7 @@ def random_generator(lists, asking, num1, num2, num3, rounds):
     # Variables
     score = 0
 
-    # Plays 5 rounds
+    # Playing rounds
     for i in range(rounds):
 
         # Mixes up the list so different question is chosen
@@ -23,16 +23,16 @@ def random_generator(lists, asking, num1, num2, num3, rounds):
         # Asks the user the question
         question = input(asking.format(lists[0][num2])).title()
 
-        # if user got it right
+        # If user got it right
         if question == lists[0][num1] or question == lists[0][num3]:
             answer = "right! Congratulations!"
             score += 1
 
-        # if user got it wrong
+        # If user got it wrong
         else:
             answer = f"wrong, the correct answer was '{lists[0][num1]}'. Try again next time! "
 
-        # printing if user was right or wrong
+        # Printing if user was right or wrong
         print(f"You got it {answer}")
         print()
 
@@ -62,7 +62,7 @@ print("Easy mode \n")
 final_score = random_generator(numbers_2, "What is {} in English? ",
                                0, 2, 1, number_of_rounds)
 
-# printing final score
+# Printing final score
 print(f"\nYou got {final_score} out of {number_of_rounds}")
 
 # Calling on function for English
@@ -70,6 +70,6 @@ print("Hard mode \n")
 other_final_score = random_generator(numbers, "What is {} in Maori? ",
                                      2, 0, 0, number_of_rounds)
 
-# printing final score
+# Printing final score
 print(f"\nYou got {other_final_score} out of {number_of_rounds}")
 

@@ -10,6 +10,7 @@ import random
 # List of Maori words up to 10
 maori_numbers = ["Tahi", "Rua", "Toru", "Wha", "Rima", "Ono", "Whitu", "Waru", "Iwa", "Tekau"]
 
+# Looping 5 times
 for i in range(5):
 
     # Random Maori number chosen
@@ -34,9 +35,9 @@ for i in range(5):
         answer = "right!"
 
     else:
-        # if answer wrong
+        # If answer wrong
         answer = "wrong"
 
-    # printing if user is right or wrong
+    # Printing if user is right or wrong
     print(f"You got it {answer}")
     print()

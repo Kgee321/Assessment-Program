@@ -23,7 +23,3 @@ english_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in range(20):
     english_choice = random.choice(english_numbers)
     question = input(f"What is {english_choice} in English? ")
-
-
-
-

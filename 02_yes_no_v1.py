@@ -7,11 +7,11 @@ Created on the 5/05/2022
 # Ask the user if they have played before
 show_instructions = input("Have you played this quiz before? ")
 
-# if they say yes, output 'program continues'
+# if yes, output 'program continues'
 if show_instructions == "yes":
     print("Program continues")
 
-# if they say no, out 'instructions displayed'
+# if no, output 'instructions displayed'
 elif show_instructions == "no":
     print("Display instructions")
 

@@ -19,7 +19,7 @@ def random_generator(list1, list2, asking, rounds):
         # Random Maori number chosen
         choice = random.choice(list1)
 
-        # Asking the user for the english translation of random Maori number
+        # Asks the user the question
         question = input(asking.format(choice)).title()
 
         # Finding the correct answer to the question
@@ -28,13 +28,13 @@ def random_generator(list1, list2, asking, rounds):
         # Loop to check if user is correct
         for num in range(len(list1)):
 
-            # User got it right, loop breaks
+            # User got it right
             if choice == list1[num] and question == list2[num]:
                 score += 1
                 answer = "right! Congratulations!"
                 break
 
-            # User got it wrong, loop continues
+            # User got it wrong
             else:
                 answer = f"wrong. The correct answer was {correct_answer}"
 
@@ -50,10 +50,14 @@ def random_generator(list1, list2, asking, rounds):
 
 # List of Maori words up to 10
 maori_numbers = ["Tahi", "Rua", "Toru", "Wha", "Rima", "Ono", "Whitu", "Waru", "Iwa", "Tekau"]
+
+# List of the English words up to 10
 english_numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+
+# Variables
 number_of_rounds = 10
 
-# coping list so code can be tested twice
+# Coping list so code can be tested twice
 maori_list = maori_numbers.copy()
 english_list = english_numbers.copy()
 
@@ -62,13 +66,13 @@ print("Hard mode \n")
 final_score = random_generator(english_numbers, maori_numbers,
                                "What is {} in Maori? ", number_of_rounds)
 
-# Telling user there score
+# Telling user their score
 print(f"\nYou got {final_score} out of 10 correct")
 
 # Calling on function for easy mode
 print("Easy mode \n")
-other_final_score = random_generator(maori_list, english_list,
-                                     "What is {} in English? (Answer only using numbers) ", number_of_rounds)
+other_final_score = random_generator(maori_list, english_list, "What is {} in English? (Answer only using numbers) ",
+                                     number_of_rounds)
 
-# Telling user there score
+# Telling user their score
 print(f"\nYou got {other_final_score} out of {number_of_rounds} correct")

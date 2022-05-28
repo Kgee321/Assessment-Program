@@ -15,7 +15,7 @@ while show_instructions != "x":
     if show_instructions == "yes" or show_instructions == "y":
         print("Program continues")
 
-    # if they say no, out 'instructions displayed'
+    # if they say no, output 'instructions displayed'
     elif show_instructions == "no" or show_instructions == "n":
         print("Display instructions")
 
@@ -23,4 +23,5 @@ while show_instructions != "x":
     else:
         print("Please answer 'yes' or 'no'")
 
+    # Printing answer
     print(f"You entered '{show_instructions}'")

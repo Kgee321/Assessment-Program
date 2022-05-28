@@ -10,6 +10,8 @@ import random
 
 # List of Maori words up to 10
 maori_numbers = ["Tahi", "Rua", "Toru", "Wha", "Rima", "Ono", "Whitu", "Waru", "Iwa", "Tekau"]
+
+# List of English words to 10
 numbers_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 for number in range(5):

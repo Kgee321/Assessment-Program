@@ -28,13 +28,14 @@ for i in range(5):
     # Asks the user the question
     question = input("What is {} in English? ".format(numbers[0][1])).title()
 
-    # if user got it right -- numbers
+    # If user got it right
     if question == numbers[0][0]:
         answer = "right!"
 
-    # if user got it wrong
+    # If user got it wrong
     else:
         answer = "wrong"
 
+    # Printing if user is right or wrong
     print(f"You got it {answer}")
     print()

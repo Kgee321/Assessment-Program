@@ -1,5 +1,5 @@
 """Component 2 (yes/no checker) -- version 2
-Simplifies the input by converting  it to lower case.
+Simplifies the input by converting it to lower case.
 Also accepts y or n as abbreviations.
 Prints result of user choice as well as input -- for testing
 Written by Katelyn Gee
@@ -13,7 +13,7 @@ show_instructions = input("Have you played this quiz before? ").lower()
 if show_instructions == "yes" or show_instructions == "y":
     print("Program continues")
 
-# if they say no, out 'instructions displayed'
+# if they say no, output 'instructions displayed'
 elif show_instructions == "no" or show_instructions == "n":
     print("Display instructions")
 
@@ -21,4 +21,5 @@ elif show_instructions == "no" or show_instructions == "n":
 else:
     print("Please answer 'yes' or 'no'")
 
+# Printing answer
 print(f"You entered '{show_instructions}'")

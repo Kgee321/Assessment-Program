@@ -7,28 +7,30 @@ Created on the 5/05/2022
 """
 
 
-# function goes here..
+# checker functions
 def checker(question_text, question1, question2):
     while True:
 
-        # Ask the user if they have played before
+        # Asking question
         answer = input(question_text).lower()
 
-        # if they say yes, output 'program continues'
+        # If user input is the same as first response
         if answer == question1 or answer == question1[0]:
             answer = question1.title()
             return answer
 
-        # if they say no, out 'instructions displayed'
+        #  If user input is the same as second response
         elif answer == question2 or answer == question2[0]:
             answer = question2.title()
             return answer
 
-        # otherwise - show error
+        # Otherwise - show error
         else:
             print(f"Please answer with '{question1}' or '{question2}'")
 
 
-# Main routine goes here...
+# Main routine
 show_instruction = checker("Have you played this quiz before? ", "yes", "no")
+
+# Print answer
 print(f"You entered '{show_instruction}'")

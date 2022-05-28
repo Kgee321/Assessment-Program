@@ -12,17 +12,17 @@ def checker(question_text, question1, question2):
         # Ask the user if they have played before
         answer = input(question_text).lower()
 
-        # if they say yes, output 'program continues'
+        #  If user input is the same as first response
         if answer == question1 or answer == question1[0]:
             answer = question1.title()
             return answer
 
-        # if they say no, out 'instructions displayed'
+        #  If user input is the same as second response
         elif answer == question2 or answer == question2[0]:
             answer = question2.title()
             return answer
 
-        # otherwise - show error
+        # Otherwise - show error
         else:
             print(f"Please answer '{question1}' or '{question2}'")
 
@@ -36,11 +36,14 @@ def instructions():
     print("Program continues")
 
 
-# Main routine goes here...
+# Main routine
 played_before = checker("Have you played this quiz before? ", "yes", "no")
 
+# Instructions displayed
 if played_before == "No":
     instructions()
+
+# Otherwise
 else:
     print("Program continues")
 

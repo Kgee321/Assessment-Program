@@ -13,14 +13,14 @@ def formatter(symbol, text):
     formatted_text = f"{sides} {text} {sides}"
     top_bottom = symbol * len(formatted_text)
 
-    # printing formatted statement
+    # Printing formatted statement
     print(top_bottom)
     print(formatted_text)
     print(top_bottom)
     print()
 
 
-# practice printing statements
+# Practice printing statements
 formatter("-", "Welcome to Māori numbers quiz")
 formatter("!", "You got it right, Congratulations")
 formatter("#", "You got it wrong, Better luck next time")

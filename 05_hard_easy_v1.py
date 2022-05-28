@@ -10,25 +10,25 @@ created on the 7/05/2022"""
 def checker(question_text, question1, question2):
     while True:
 
-        # Ask the user if they have played before
+        # Ask user the question
         answer = input(question_text).lower()
 
-        # if they say yes, output 'program continues'
+        # If user input is the same as first response
         if answer == question1 or answer == question1[0]:
             answer = question1.title()
             return answer
 
-        # if they say no, out 'instructions displayed'
+        #  If user input is the same as second response
         elif answer == question2 or answer == question2[0]:
             answer = question2.title()
             return answer
 
-        # otherwise - show error
+        # Otherwise - show error
         else:
             print(f"Please answer with '{question1}' or '{question2}'")
 
 
-# Main routine goes here...
+# Main routine with loop for testing
 while "y" != "x":
     hard_easy = checker("Do you want to play hard mode (h) or easy mode (e)? ", "hard", "easy")
     print(f"You are playing '{hard_easy}' mode")
